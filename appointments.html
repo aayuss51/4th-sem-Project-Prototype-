@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Appointments — HealCare</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><img src="assets/logo.svg" alt="logo"/><h1>HealCare</h1></div>
+    <nav class="menu">
+      <a href="index.html">Dashboard</a>
+      <a href="patients.html">Patients</a>
+      <a href="doctors.html">Doctors</a>
+      <a class="active" href="appointments.html">Appointments</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h2>Appointments</h2>
+      <div class="actions">
+        <button id="newAppointment" class="btn">+ Schedule</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <form id="appointmentForm" class="form-grid">
+        <input id="ap_patient" placeholder="Patient name" list="patientsList" required>
+        <datalist id="patientsList"></datalist>
+        <input id="ap_doctor" placeholder="Doctor name" list="doctorsList" required>
+        <datalist id="doctorsList"></datalist>
+        <input id="ap_date" type="date" required>
+        <input id="ap_time" type="time" required>
+        <button class="btn">Add Appointment</button>
+      </form>
+
+      <div class="table-wrap">
+        <table id="appointmentTable">
+          <thead><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="foot">Frontend only • Use browser storage for demo</footer>
+  </main>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-dialog">
+    <button id="modalClose" class="modal-close">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

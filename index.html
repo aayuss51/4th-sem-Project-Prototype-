@@ -1,0 +1,94 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hospital Management — Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="logo" />
+      <h1>HealCare </h1>
+    </div>
+    <nav class="menu">
+      <a class="active" href="index.html">Dashboard</a>
+      <a href="patients.html">Patients</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="appointments.html">Appointments</a>
+    </nav>
+    <div class="sidebar-footer">Logged in as Student</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="search">
+        <input id="globalSearch" placeholder="Search patients, doctors, appointments..." />
+      </div>
+      <div class="actions">
+        <button id="addPatientBtn" class="btn">+ New Patient</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Welcome to HealCare</h2>
+        <p>A simple, modern UI for your Hospital Management project — responsive and interactive.</p>
+        <div class="stats">
+          <div class="card small">
+            <div class="value" id="statPatients">0</div>
+            <div class="label">Patients</div>
+          </div>
+          <div class="card small">
+            <div class="value" id="statDoctors">0</div>
+            <div class="label">Doctors</div>
+          </div>
+          <div class="card small">
+            <div class="value" id="statAppointments">0</div>
+            <div class="label">Appointments</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="assets/hero.svg" alt="hospital illustration" />
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Upcoming Appointments</h3>
+        <table id="dashAppointments">
+          <thead><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Recent Patients</h3>
+        <ul id="dashPatients" class="list"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Available Doctors</h3>
+        <ul id="dashDoctors" class="list"></ul>
+      </div>
+    </section>
+
+    <footer class="foot">Designed for 4th semester project • Frontend only</footer>
+  </main>
+</div>
+
+<!-- Modal template -->
+<div id="modal" class="modal hidden">
+  <div class="modal-dialog">
+    <button id="modalClose" class="modal-close">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
